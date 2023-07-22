@@ -44,29 +44,6 @@ public class Solution {
         return mergerString.toString();
     }
 
-//    public static int[] topKFrequent(int[] nums, int k) {
-//        int frequent = 0, j = 0;
-//        int[] newArr = new int[nums.length];
-//        int n=0;
-//        for (int i = 0; i < nums.length;) {
-//            n = nums[i];
-//            frequent = 0;
-//            while (n == nums[i]){
-//                frequent++;
-//                if (i < nums.length){
-//                    break;
-//                }
-//                i++;
-//            }
-//            if (frequent >= k){
-//                newArr[j] = n;
-//            }
-//        }
-//
-//        return newArr;
-//    }
-
-
     public static int largestAltitude(int[] gain) {
         int highest = 0, max = 0;
         for (int i = 0; i < gain.length; ) {
