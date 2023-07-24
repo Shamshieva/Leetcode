@@ -3,12 +3,29 @@ import java.util.Arrays;
 public class Solution {
 
     public static void main(String[] args) {
-//        System.out.println(canPlaceFlowers(new int[]{1, 0, 0, 0, 1}, 2));
-//        System.out.println(canPlaceFlowers(new int[]{0,0,1,0,1}, 1));
-        System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1,0,0}, 2));
-//        System.out.println(canPlaceFlowers(new int[]{1,0,0,0,1,0,0,0,0}, 4));
-//        System.out.println(canPlaceFlowers(new int[]{1}, 0));
-//        System.out.println(canPlaceFlowers(new int[]{0}, 1));
+        System.out.println(reverseVowels("hello"));
+        System.out.println(reverseVowels("leetcode"));
+    }
+
+    public static String reverseVowels(String s) {
+        char[] letters = s.toCharArray();
+        int left = 0;
+        int right = s.length() - 1;
+        String vowels = "aeiouAEIOU";
+        while (left < right) {
+            while (left < right && vowels.indexOf(letters[left]) == -1) {
+                left++;
+            }
+            while (left < right && vowels.indexOf(letters[right]) == -1) {
+                right--;
+            }
+            char temp = letters[left];
+            letters[left] = letters[right];
+            letters[right] = temp;
+            left++;
+            right--;
+        }
+        return new String(letters);
     }
 
     public static boolean canPlaceFlowers(int[] flowerbed, int n) {
@@ -43,6 +60,7 @@ public class Solution {
         }
         return mergerString.toString();
     }
+
 
     public static int largestAltitude(int[] gain) {
         int highest = 0, max = 0;
