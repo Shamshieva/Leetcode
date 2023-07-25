@@ -3,8 +3,24 @@ import java.util.Arrays;
 public class Solution {
 
     public static void main(String[] args) {
-        System.out.println(reverseVowels("hello"));
-        System.out.println(reverseVowels("leetcode"));
+
+        System.out.println(findMaxAverage(new int[]{1, 12, -5, -6, 50, 3}, 4));
+    }
+    public static double findMaxAverage(int[] nums, int k) {
+        double avg = 0;
+        int c = 0, sum = 0, j=0;
+        for (int i = 0; i < nums.length; i++) {
+            j = i;
+            c = 0;
+            sum = 0;
+            while (c != k && j<nums.length){
+                sum += nums[j];
+                j++;
+                c++;
+            }
+            avg = Math.max(avg, (double) sum /k);
+        }
+        return avg;
     }
 
     public static String reverseVowels(String s) {
